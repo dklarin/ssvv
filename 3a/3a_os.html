@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SJWP 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Zaglavlje -->
+  <header class="bg-primary text-white text-center py-3" id="naslov">
+    Skriptni jezici i web programiranje & Programiranje mobilnih uređaja
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top transition-all" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold">Strukovna škola Vice Vlatkovića</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">OPSUS</a></li>
+          <li class="nav-item"><a class="nav-link" href="3a_os.html">PMU</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Više
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Blog</a></li>
+              <li><a class="dropdown-item" href="#">FAQ</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Cjenik</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="#" class="btn btn-primary ms-lg-4">Testni botun</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <main class="flex-fill">
+
+
+    <!-- Sadržaj -->
+    <div class="container mt-4">
+      <div class="row">
+
+        <!-- Prvi stupac -->
+        <div class="col-md-3 p-3 border">
+          <h4>Potreban Software</h4>
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Software</th>
+                <th scope="col">Razvijatelj</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>
+                  <a href="https://code.visualstudio.com/docs/?dv=win64user">Visual Studio Code</a>
+                </td>
+                <td>Microsoft</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>
+                  <a href="https://nodejs.org/dist/v22.13.1/node-v22.13.1-x64.msi">Node.js (LTS)</a>
+                </td>
+                <td>OpenJS</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>
+                  <a href="https://classic.yarnpkg.com/latest.msi">Yarn</a>
+                </td>
+                <td>OpenJS</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr>
+          <h4>Postavljanje okruženja</h4>
+          <br>
+
+          <hr>
+          <h4>Flask</h4>
+          <br>
+          <h5>Kreiranje virtualnog okruženja</h5>
+          <code>py -m venv venv</code>
+          <br>
+          <br>
+          <h5>Aktiviranje virtualnog okruženja</h5>
+          <code>venv/scripts/activate.ps1</code>
+          <br>
+          <br>
+          <h5>Pokretanje aplikacije</h5>
+          <code>py wsgi.py</code>
+
+          <hr>
+          <h4>React-Native</h4>
+          <br>
+          <h5>Kreiranje novog projekta</h5>
+          <code>yarn create expo-app my-app</code>
+          <br>
+          <br>
+          <h5>Pokretanje projekta</h5>
+          <code>yarn web</code>
+          <br>
+          <br>
+          <h5>Resetiranje projekta</h5>
+          <code>yarn reset-project</code>
+        </div>
+
+        <!-- Drugi stupac -->
+        <div class="col-md-6 bg-light text-black p-3 border">
+
+          <br>
+
+
+
+
+
+
+
+          <h3>Programiranje mobilnih uređaja</h3>
+
+
+
+
+
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vježbe</th>
+              </tr>
+            </thead>
+            <tbody id="tablica"></tbody>
+          </table>
+
+
+
+
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vježbe</th>
+                <th>Datum</th>
+              </tr>
+            </thead>
+            <tbody id="kodovi"></tbody>
+          </table>
+
+
+
+
+        </div>
+
+        <!-- Treći stupac -->
+        <div class="col-md-3 bg-light p-3 border">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Podnožje -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Izradio: Danijel Klarin</p>
+    </div>
+  </footer>
+
+  <script>
+
+
+
+
+    // Bazni URL – mijenjaš samo ako se promijeni tvoj SharePoint folder
+    const base = "https://carnet-my.sharepoint.com/:u:/g/personal/danijel_klarin_skole_hr/";
+
+    // Svi linkovi na jednom mjestu – super pregledno i lako za održavanje
+    const datoteke = [
+      { id: "IQBXH4ZrqL7dS7cxIrHl-lFJAaRwgWXh0LMEMB609f24pVs?e=r6q1iw", naziv: "Kreiranje novog projekta" },
+      { id: "IQCSGtuI5wpWSat-fegUIvhaAQMAHkIF7OAIDlSqVEN5N00?e=49w4wR", naziv: "Docker Desktop 4.54.0.212467" },      // ← ovaj koji si tražio
+
+      // dodaj koliko god hoćeš novih redova...
+    ];
+
+    const datoteke_kodovi = [
+      { id: "IQAO-tjeJ8pwSqoo6bS2lwqQAZ6-pqPoLmBGqiOlcqc5i0I?e=wtMe3a", naziv: "Flex", datum: "13.1.2026." },
+
+
+      // dodaj koliko god hoćeš novih redova...
+    ];
+
+
+
+
+
+
+
+
+
+    // Automatski generiranje redova u tablici
+    const tbody = document.getElementById("tablica");
+    datoteke.forEach((item, index) => {
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+      <td>${index + 1}</td>
+      <td>
+        <a href="${base + item.id}" target="_blank" rel="noopener">
+          ${item.naziv}
+        </a>
+      </td>
+    `;
+
+      tbody.appendChild(tr);
+    });
+
+
+    // Automatski generiranje redova u tablici
+    const tbody_kodovi = document.getElementById("kodovi");
+    datoteke_kodovi.forEach((item, index) => {
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+      <td>${index + 1}</td>
+      <td>
+        <a href="${base + item.id}" target="_blank" rel="noopener">
+          ${item.naziv}
+        </a>
+      </td>
+      <td>${item.datum}</td>
+    `;
+
+      tbody_kodovi.appendChild(tr);
+    });
+
+    // Navigacija
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 50) {
+        navbar.classList.remove('navbar-light', 'bg-white');
+        navbar.classList.add('bg-dark', 'navbar-dark', 'shadow');
+      } else {
+        navbar.classList.remove('bg-dark', 'navbar-dark', 'shadow');
+        navbar.classList.add('navbar-light', 'bg-white');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
